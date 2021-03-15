@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_paystack (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_paystack (from `.symlinks/plugins/flutter_paystack/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_paystack:
+    :path: ".symlinks/plugins/flutter_paystack/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_paystack: 50021637b71e7712780744f69d2843e71b65175d
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
