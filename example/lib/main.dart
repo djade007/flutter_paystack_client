@@ -88,11 +88,9 @@ class _HomePageState extends State<HomePage> {
                 final res =
                     await PaystackClient.checkout(context, charge: charge);
 
-                print('got here');
                 if (res.status) {
                   _message = 'Charge was successful. Ref: ${res.reference}';
                 } else {
-                  print('failure');
                   _message = 'Failed: ${res.message}';
                 }
                 setState(() {});
