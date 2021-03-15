@@ -1,5 +1,7 @@
 # flutter_paystack_client
 
+A new Flutter project.
+
 <p>
     <img src="https://raw.githubusercontent.com/djade007/flutter_paystack_client/master/screenshots/web.png" width="400px" height="auto" hspace="20"/>
     <img src="https://raw.githubusercontent.com/djade007/flutter_paystack_client/master/screenshots/iphone.png" width="200px" height="auto" hspace="20"/>
@@ -23,30 +25,31 @@ class _PaymentPageState extends State<PaymentPage> {
 
   @override
   void initState() {
-    PaystackClient.initialize(
-            publicKey: publicKey);
+    PaystackClient.initialize(publicKey);
   }
 }
 ```
 
+### Web
+Include the Paystack JS script in your index.html file
+```
+<script src="https://js.paystack.co/v1/inline.js"></script>
+```
+
 ### Usage
-
  ```dart
+ Charge charge = Charge()
+       ..amount = 10000
+       ..reference = _getReference()
+       ..email = 'customer@email.com';
 
-Charge charge = Charge()
-  ..amount = 10000
-  ..reference = _getReference()
-  ..email = 'customer@email.com';
-
-CheckoutResponse response = await
-PaystackPlugin.checkout(
-
-context context,
-    charge
-:
-charge,);
+ CheckoutResponse response = await PaystackPlugin.checkout(
+   context context,
+   charge: charge,
+ );
  ```
 
-It is recommended that when `PaystackClient.checkout()` returns, the payment should be
+It is recommended that when `PaystackClient.checkout()` returns, the
+payment should be
 [verified](https://developers.paystack.co/v2.0/reference#verify-transaction)
 on your backend.
