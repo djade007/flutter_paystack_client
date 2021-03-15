@@ -1,7 +1,5 @@
 # flutter_paystack_client
 
-A new Flutter project.
-
 <p>
     <img src="https://raw.githubusercontent.com/djade007/flutter_paystack_client/master/screenshots/web.png" width="400px" height="auto" hspace="20"/>
     <img src="https://raw.githubusercontent.com/djade007/flutter_paystack_client/master/screenshots/iphone.png" width="200px" height="auto" hspace="20"/>
