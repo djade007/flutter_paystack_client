@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter_paystack/flutter_paystack.dart';
+import 'package:js/js.dart';
 
 import '../flutter_paystack_client.dart';
-import 'js/models.dart';
 import 'js/paystack_stub.dart' if (dart.library.js) 'js/paystack_js.dart';
 
 class PaystackWeb {
@@ -13,13 +13,15 @@ class PaystackWeb {
     final handler = setup(
       SetupData(
         key: key,
-        email: charge.email,
+        email: charge.email!,
         amount: charge.amount,
-        ref: charge.reference,
-        onClose: () {
-          completer.complete(CheckoutResponse.defaults());
-        },
-        callback: (response) {
+        ref: charge.reference!,
+        onClose: allowInterop(
+          () {
+            completer.complete(CheckoutResponse.defaults());
+          },
+        ),
+        callback: allowInterop((response) {
           completer.complete(
             CheckoutResponse(
               message: response.message,
@@ -30,7 +32,7 @@ class PaystackWeb {
               card: charge.card ?? PaymentCard.empty(),
             ),
           );
-        },
+        }),
       ),
     );
 

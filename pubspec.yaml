@@ -1,6 +1,6 @@
 name: flutter_paystack_client
 description: Paystack plugin with support for Web, Android and iOS
-version: 0.0.1+1
+version: 0.1.0
 homepage: https://github.com/djade007/flutter_paystack_client
 
 environment:
