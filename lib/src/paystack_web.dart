@@ -25,7 +25,7 @@ class PaystackWeb {
               message: response.message,
               reference: response.reference,
               status: response.status == 'success',
-              method: null,
+              method: CheckoutMethod.card,
               verify: true,
               card: charge.card ?? PaymentCard.empty(),
             ),

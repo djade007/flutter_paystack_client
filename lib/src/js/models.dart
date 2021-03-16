@@ -1,19 +1,19 @@
 import 'package:flutter/foundation.dart';
 
 class SetupData {
-  final String key;
-  final String email;
+  final String? key;
+  final String? email;
   final int amount;
-  final String ref;
+  final String? ref;
 
-  final VoidCallback onClose;
-  final PaystackCallback callback;
+  final VoidCallback? onClose;
+  final PaystackCallback? callback;
 
   SetupData({
-    @required this.key,
-    @required this.email,
-    @required this.amount,
-    @required this.ref,
+    required this.key,
+    required this.email,
+    required this.amount,
+    required this.ref,
     this.onClose,
     this.callback,
   });
